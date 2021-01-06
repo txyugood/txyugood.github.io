@@ -20,28 +20,39 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="Relation Net 是 CVPR2018的一篇论文，论文链接：https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1711.06025。深度学习在视觉识别任务中取得巨大的成功，文章作者指出训练模型需要大量标注过的图片，同时需要迭代多次去训练参数。每当添加新的物体类别需要花费时间去标注，同时有一些新兴物体类别和稀有物体类别可能根本不存在大量的标注过的图片。而人类是只要很少的认知学习就可实现小样本（FS">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Relation Net 是 CVPR2018的一篇论文，论文链接：https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1711.06025。深度学习在视觉识别任务中取得巨大的成功，文章作者指出训练模型需要大量标注过的图片，同时需要迭代多次去训练参数。每当添加新的物体类别需要花费时间去标注，同时有一些新兴物体类别和稀有物体类别可能根本不存在大量的标注过的图片。而人类是只要很少的认知学习就可实现小样本（FS">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png">
+<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/2.png">
+<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/3.png">
+<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/4.png">
+<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/5.png">
+<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/6.png">
+<meta property="article:published_time" content="2021-01-06T02:00:19.225Z">
+<meta property="article:modified_time" content="2021-01-06T02:09:42.294Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -139,101 +150,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/docs/16098987616827/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/06/docs/16098987616827/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-06 10:06:01" itemprop="dateCreated datePublished" datetime="2021-01-06T10:06:01+08:00">2021-01-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="欢迎使用-MWeb"><a href="#欢迎使用-MWeb" class="headerlink" title="欢迎使用 MWeb"></a>欢迎使用 MWeb</h1><p>MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件，目前已支持 Mac，iPad 和 iPhone。MWeb 有以下特色：</p>
-<h2 id="软件本身："><a href="#软件本身：" class="headerlink" title="软件本身："></a>软件本身：</h2><ul>
-<li>使用原生的 macOS 技术打造，追求与系统的完美结合。</li>
-<li>原则上，首先是追求界面简洁和高性能，然后才是强大易用，功能全面。</li>
-</ul>
-<h2 id="Markdown-语法："><a href="#Markdown-语法：" class="headerlink" title="Markdown 语法："></a>Markdown 语法：</h2><ul>
-<li>使用 GitHub Flavored Markdown 语法，简称 GFM 语法。</li>
-<li>支持表格、TOC、LaTeX、代码块、任务列表、脚注等。</li>
-<li>画图库支持 mermaid, viz, ECharts, PlantUML, Sequence, Flow。</li>
-</ul>
-<h2 id="Markdown-辅助："><a href="#Markdown-辅助：" class="headerlink" title="Markdown 辅助："></a>Markdown 辅助：</h2><ul>
-<li>支持截图并粘贴、复制并粘贴、拖拽等方式插入图片并直接显示在编辑器内。</li>
-<li>在兼容 Markdown 语法的情况下支持设置图片宽度。</li>
-<li>好用的表格插入和 LaTeX 书写辅助。</li>
-</ul>
-<h2 id="Markdown-输出："><a href="#Markdown-输出：" class="headerlink" title="Markdown 输出："></a>Markdown 输出：</h2><ul>
-<li>支持导出为图片、HTML、Epub、PDF、RTF、Docx。</li>
-<li>支持发布到 WordPress、支持 Metaweblog API 协议的服务、Wordpress.com、印象笔记（Evernote）、Blogger、Medium、Tumblr、语雀、Ghost、少数派 Matrix。</li>
-<li>图片上传服务（图床）支持 Imgur、七牛云、又拍云、腾讯云 COS、阿里云 OSS、SM.MS和自定义的图床服务。</li>
-</ul>
-<h2 id="Markdown-笔记："><a href="#Markdown-笔记：" class="headerlink" title="Markdown 笔记："></a>Markdown 笔记：</h2><ul>
-<li>强大的文档库支持分类树和标签管理文档，文档可归类于多个分类，可以把分类整个导出为 Epub、PDF 和生成静态网站。非常合适用于笔记、个人知识收集、管理和输出。</li>
-<li>快速笔记：随意增加笔记及图片等素材，支持以天为单位把增加的素材组合在一个文档内，方便整理及记录历史收集情况。</li>
-<li>快速搜索：目前已支持全局快捷键调出搜索。</li>
-</ul>
-<h2 id="外部-Markdown-文档："><a href="#外部-Markdown-文档：" class="headerlink" title="外部 Markdown 文档："></a>外部 Markdown 文档：</h2><ul>
-<li>外部 Markdown 文档使用外部模式管理。外部模式使用目录树的方式编辑和管理你的 Markdown 文档，还能很好的支持 GitBook、Jekyll、Hexo 等等编辑和图片插入。</li>
-</ul>
-<h2 id="MWeb-文档："><a href="#MWeb-文档：" class="headerlink" title="MWeb 文档："></a>MWeb 文档：</h2><p>如果要更详细了解 MWeb，建议你一定要去看一下官网的帮助文档，网址为：<a target="_blank" rel="noopener" href="https://zh.mweb.im/help.html">https://zh.mweb.im/help.html</a>。我们建议在使用文档库之前，一定要阅读一下 <a target="_blank" rel="noopener" href="https://zh.mweb.im/mweb-library.html">MWeb 文档库详细介绍</a> 这篇文章，以便更好的使用文档库。</p>
-<h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p>
-<ol>
-<li>推荐 MWeb，让更多的人知道。</li>
-<li>给我们发反馈和建议：<a href="mailto:&#99;&#x6f;&#x64;&#x65;&#114;&#102;&#111;&#x72;&#97;&#x72;&#116;&#43;&#x32;&#x33;&#51;&#x33;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#99;&#x6f;&#x64;&#x65;&#114;&#102;&#111;&#x72;&#97;&#x72;&#116;&#43;&#x32;&#x33;&#51;&#x33;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></li>
-<li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -249,10 +169,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+        <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -276,7 +195,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Relation Net 是 CVPR2018的一篇论文，论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.06025%E3%80%82">https://arxiv.org/abs/1711.06025。</a><br><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png" alt="在这里插入图片描述"><br>深度学习在视觉识别任务中取得巨大的成功，文章作者指出训练模型需要大量标注过的图片，同时需要迭代多次去训练参数。每当添加新的物体类别需要花费时间去标注，同时有一些新兴物体类别和稀有物体类别可能根本不存在大量的标注过的图片。而人类是只要很少的认知学习就可实现小样本（FSL）和无样本学习(ZSL)。作者举了一个例子，小孩子只要在一张图片或一本书里认识了斑马，或者只是听到描述斑马是一种”条纹马”，就可以毫无困难的识别出斑马这种动物。为了解决深度学习中样本很少模型的分类效果就会很差的问题，同时又受到人类的小样本和无样本学习能力带来的启发，小样本学习又恢复了一些热度。深度学习中的Fine-tune技术可以用于一些样本比较少的情况，但是在只有一个或者几个样本的情况下，即使使用了数据增强和正则化技术，仍然会有过拟合的问题。目前其他的小样本学习的推理机制又比较复杂，所以论文作者提出了一个可以端到端训练，并且结构简单的模型 Relation Net。<br>在 FSL 任务中，一般将数据集分为 training set /support set /testing set 三个数据集。support set和 testing set有共同的标签，training set里面不包涵 support set和 testing set的标签。在 support set 中有 K 个标注过的数据和 C 个不同的类别，则称作为 C-way K-shot。在训练的过程中从 training set 中选取 sample set /query set 对应support set/testing set，具体方法后面训练策略里会详细说明。<br>Relation Network由 embedding model 和 relation model 组成。Relation Network 的核心思想是首先通过embedding model分别提取 support set 和 testing set中图像的特征图，然后将特征图中代表通道数的维度进行拼接，得到一个新的特征图。然后把新的特征图送入 relation model 进行运算得到 relation score，这个值代表了两张图的相似度。<br>下图为5-way 1-shot 的情况下接受1个样本的网络结构与流程。5张sample set 中的图片与1张 query set 中的图片会分别的通过 embedding model 提取特征并拼接，得到5个新的特征图，然后送入 Relation Net 进行计算 relation score，最后会得到一个 one-shot 的向量，分数最高的代表对应的类别。<img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/2.png" alt="在这里插入图片描述"><br>训练使用的损失函数也比较简单，使用均方误差作为损失函数。公式中 ri,j代表图片 i与 j 的相似度。yi 与 yj代表图片的真实标签。<br><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/3.png" alt="在这里插入图片描述"><br>基于飞桨复现Relation Network<br>Relation Network 模型结构定义请查看：<br><a target="_blank" rel="noopener" href="https://github.com/txyugood/paddle_RN_FSL/blob/master/RelationNet.py">https://github.com/txyugood/paddle_RN_FSL/blob/master/RelationNet.py</a><br>下面我将复现的技术细节与各位开发者分享。<br>1.搭建 Relation Network 网络<br>模型由embedding model 和 relation model 两部分组成，两个网络都主要由 【Conv+BN+Relu】模块组成，所以首先定义一个 BaseNet类，并在其中实现conv_bn_layer方法，代码如下：</p>
+        <p>Relation Net 是 CVPR2018的一篇论文，论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.06025%E3%80%82">https://arxiv.org/abs/1711.06025。</a><br><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png" alt="在这里插入图片描述"><br>深度学习在视觉识别任务中取得巨大的成功，文章作者指出训练模型需要大量标注过的图片，同时需要迭代多次去训练参数。每当添加新的物体类别需要花费时间去标注，同时有一些新兴物体类别和稀有物体类别可能根本不存在大量的标注过的图片。而人类是只要很少的认知学习就可实现小样本（FSL）和无样本学习(ZSL)。作者举了一个例子，小孩子只要在一张图片或一本书里认识了斑马，或者只是听到描述斑马是一种”条纹马”，就可以毫无困难的识别出斑马这种动物。为了解决深度学习中样本很少模型的分类效果就会很差的问题，同时又受到人类的小样本和无样本学习能力带来的启发，小样本学习又恢复了一些热度。深度学习中的Fine-tune技术可以用于一些样本比较少的情况，但是在只有一个或者几个样本的情况下，即使使用了数据增强和正则化技术，仍然会有过拟合的问题。目前其他的小样本学习的推理机制又比较复杂，所以论文作者提出了一个可以端到端训练，并且结构简单的模型 Relation Net。<br>在 FSL 任务中，一般将数据集分为 training set /support set /testing set 三个数据集。support set和 testing set有共同的标签，training set里面不包涵 support set和 testing set的标签。在 support set 中有 K 个标注过的数据和 C 个不同的类别，则称作为 C-way K-shot。在训练的过程中从 training set 中选取 sample set /query set 对应support set/testing set，具体方法后面训练策略里会详细说明。<br>Relation Network由 embedding model 和 relation model 组成。Relation Network 的核心思想是首先通过embedding model分别提取 support set 和 testing set中图像的特征图，然后将特征图中代表通道数的维度进行拼接，得到一个新的特征图。然后把新的特征图送入 relation model 进行运算得到 relation score，这个值代表了两张图的相似度。<br>下图为5-way 1-shot 的情况下接受1个样本的网络结构与流程。5张sample set 中的图片与1张 query set 中的图片会分别的通过 embedding model 提取特征并拼接，得到5个新的特征图，然后送入 Relation Net 进行计算 relation score，最后会得到一个 one-shot 的向量，分数最高的代表对应的类别。<img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/2.png" alt="在这里插入图片描述"><br>训练使用的损失函数也比较简单，使用均方误差作为损失函数。公式中 ri,j代表图片 i与 j 的相似度。yi 与 yj代表图片的真实标签。<br><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/3.png" alt="在这里插入图片描述"><br>基于飞桨复现Relation Network<br>Relation Network 模型结构定义请查看：<br><a target="_blank" rel="noopener" href="https://github.com/txyugood/paddle_RN_FSL/blob/master/RelationNet.py">https://github.com/txyugood/paddle_RN_FSL/blob/master/RelationNet.py</a><br>下面我将复现的技术细节与各位开发者分享。<br>1.搭建 Relation Network 网络<br>模型由embedding model 和 relation model 两部分组成，两个网络都主要由 【Conv+BN+Relu】模块组成，所以首先定义一个 BaseNet类，并在其中实现conv_bn_layer方法，代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseNet</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">conv_bn_layer</span>(<span class="params">self,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="built_in">input</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      num_filters,</span></span></span><br><span class="line"><span class="function"><span class="params">                      filter_size,</span></span></span><br><span class="line"><span class="function"><span class="params">                      stride=<span class="number">1</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      groups=<span class="number">1</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      padding=<span class="number">0</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      act=<span class="literal">None</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      name=<span class="literal">None</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      data_format=<span class="string">&#x27;NCHW&#x27;</span></span>):</span></span><br><span class="line">        n = filter_size * filter_size * num_filters</span><br><span class="line">        conv = fluid.layers.conv2d(</span><br><span class="line">            <span class="built_in">input</span>=<span class="built_in">input</span>,</span><br><span class="line">            num_filters=num_filters,</span><br><span class="line">            filter_size=filter_size,</span><br><span class="line">            stride=stride,</span><br><span class="line">            padding=padding,</span><br><span class="line">            groups=groups,</span><br><span class="line">            act=<span class="literal">None</span>,</span><br><span class="line">            param_attr=ParamAttr(name=name + <span class="string">&quot;_weights&quot;</span>, initializer=fluid.initializer.Normal(<span class="number">0</span>,math.sqrt(<span class="number">2.</span> / n))),</span><br><span class="line">            bias_attr=ParamAttr(name=name + <span class="string">&quot;_bias&quot;</span>,</span><br><span class="line">                                initializer=fluid.initializer.Constant(<span class="number">0.0</span>)),</span><br><span class="line">            name=name + <span class="string">&#x27;.conv2d.output.1&#x27;</span>,</span><br><span class="line">            data_format=data_format)</span><br><span class="line"></span><br><span class="line">        bn_name = <span class="string">&quot;bn_&quot;</span> + name</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> fluid.layers.batch_norm(</span><br><span class="line">            <span class="built_in">input</span>=conv,</span><br><span class="line">            act=act,</span><br><span class="line">            momentum=<span class="number">1</span>,</span><br><span class="line">            name=bn_name + <span class="string">&#x27;.output.1&#x27;</span>,</span><br><span class="line">            param_attr=ParamAttr(name=bn_name + <span class="string">&#x27;_scale&#x27;</span>,</span><br><span class="line">                                 initializer=fluid.initializer.Constant(<span class="number">1</span>)),</span><br><span class="line">            bias_attr=ParamAttr(bn_name + <span class="string">&#x27;_offset&#x27;</span>,</span><br><span class="line">                                initializer=fluid.initializer.Constant(<span class="number">0</span>)),</span><br><span class="line">            moving_mean_name=bn_name + <span class="string">&#x27;_mean&#x27;</span>,</span><br><span class="line">            moving_variance_name=bn_name + <span class="string">&#x27;_variance&#x27;</span>,</span><br><span class="line">            data_layout=data_format)</span><br></pre></td></tr></table></figure>
 <p>飞桨支持静态图和动态图两种网络定义模式，这里我选用的静态图，以上代码就是定义了一个卷积神经网络中最经常出现的 conv_bn 层，但要注意的是 batch_norm 层的 momentum 设置为1，实现的效果就是不记录全局均值和方差。<br>具体参数含义如下：</p>
 <ul>
@@ -320,87 +239,33 @@
 <p>3.模型复现效果<br>验证时的数据集只使用了论文中实验用的 minImageNet,共有100个分类，每个分类600张图片。这个100个分类分别划分为 training/validation/testing 三个数据集，数量分别为64、16和20。<br>文章中提到模型在minImageNet的testing 数据集上准确率如下：</p>
 <p><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/4.png" alt="在这里插入图片描述"><br>Relation Net 在5-way 1-shot 和 5-way 5-shot 分别达到了50.44和65.32左右的准确率。<br>同样使用基于飞桨实现的 Relation Net 在minImageNet的testing 数据集上的<br>5-way 1-shot 准确率：<br><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/5.png" alt="在这里插入图片描述"><br>5-way 5-shot 准确率：<br><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/6.png" alt="在这里插入图片描述"><br>与论文中的准确率一致，模型复现完成。<br>代码地址：<a target="_blank" rel="noopener" href="https://github.com/txyugood/paddle_RN_FSL">https://github.com/txyugood/paddle_RN_FSL</a></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/06/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-06 09:19:03" itemprop="dateCreated datePublished" datetime="2021-01-06T09:19:03+08:00">2021-01-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/06/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/06/docs/16098987616827/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
