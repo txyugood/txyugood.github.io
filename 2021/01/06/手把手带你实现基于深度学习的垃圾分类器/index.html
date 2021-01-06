@@ -16,7 +16,7 @@
 <meta property="og:description" content="随着PaddlePaddle2.0的更新，PaddleClas图像分类套件也更新到了2.0-rc1版本。新版本的PaddleClas套件已经默认使用动态图来进行模型训练。现在我们使用PaddleClas套件从零开始实现一个简单的垃圾分类器。来体验一下新版本的PaddleClas的的方便快捷，即使初学者也能快速的训练出高精度的模型。本篇文章分为上下两部分，上部讲解如何从零开始训练，下部讲解部分核心代">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-06T04:39:21.000Z">
-<meta property="article:modified_time" content="2021-01-06T04:44:23.844Z">
+<meta property="article:modified_time" content="2021-01-06T04:45:13.892Z">
 <meta property="article:author" content="人工智能研习社">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
@@ -144,6 +144,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>随着PaddlePaddle2.0的更新，PaddleClas图像分类套件也更新到了2.0-rc1版本。新版本的PaddleClas套件已经默认使用动态图来进行模型训练。现在我们使用PaddleClas套件从零开始实现一个简单的垃圾分类器。来体验一下新版本的PaddleClas的的方便快捷，即使初学者也能快速的训练出高精度的模型。本篇文章分为上下两部分，上部讲解如何从零开始训练，下部讲解部分核心代码以及深度学习训练过程中使用到的技术。</p>
+<a id="more"></a>
 <h3 id="1-准备数据集"><a href="#1-准备数据集" class="headerlink" title="1.准备数据集"></a>1.准备数据集</h3><p>数据集下载地址:<br><a target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/datasetdetail/64185">https://aistudio.baidu.com/aistudio/datasetdetail/64185</a><br>下载好数据集之后，首先需要解压压缩包。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir dataset</span><br><span class="line"><span class="built_in">cd</span> dataset</span><br><span class="line">unzip garbage_classify.zip</span><br></pre></td></tr></table></figure>
 <p>数据集中共包含43个分类，例如：9代表”厨余垃圾/水果果肉”、22代表”可回收物/旧衣服、39代表有害垃圾/过期药物”。具体类别可以查看garbage_classify中的garbage_classify_rule.json文件。</p>
