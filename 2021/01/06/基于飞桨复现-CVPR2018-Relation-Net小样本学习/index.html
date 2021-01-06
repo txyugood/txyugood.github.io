@@ -5,28 +5,28 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
+  <link rel="dns-prefetch" href="http://txyugood.gitee.io">
   <title>基于飞桨复现-CVPR2018-Relation-Net小样本学习 | 人工智能研习社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Relation Net 是 CVPR2018的一篇论文，论文链接：https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1711.06025。深度学习在视觉识别任务中取得巨大的成功，文章作者指出训练模型需要大量标注过的图片，同时需要迭代多次去训练参数。每当添加新的物体类别需要花费时间去标注，同时有一些新兴物体类别和稀有物体类别可能根本不存在大量的标注过的图片。而人类是只要很少的认知学习就可实现小样本（FS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于飞桨复现-CVPR2018-Relation-Net小样本学习">
-<meta property="og:url" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="人工智能研习社">
 <meta property="og:description" content="Relation Net 是 CVPR2018的一篇论文，论文链接：https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1711.06025。深度学习在视觉识别任务中取得巨大的成功，文章作者指出训练模型需要大量标注过的图片，同时需要迭代多次去训练参数。每当添加新的物体类别需要花费时间去标注，同时有一些新兴物体类别和稀有物体类别可能根本不存在大量的标注过的图片。而人类是只要很少的认知学习就可实现小样本（FS">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png">
-<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/2.png">
-<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/3.png">
-<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/4.png">
-<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/5.png">
-<meta property="og:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/6.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/2.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/3.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/4.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/5.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/6.png">
 <meta property="article:published_time" content="2021-01-06T02:37:00.000Z">
 <meta property="article:modified_time" content="2021-01-06T04:45:42.026Z">
 <meta property="article:author" content="人工智能研习社">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png">
+<meta name="twitter:image" content="http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png">
   
     <link rel="alternative" href="/atom.xml" title="人工智能研习社" type="application/atom+xml">
   
@@ -264,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://txyugood.gitee.io/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -403,6 +403,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">深度学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">每天学paddle</a>
               </li>
             
             <div class="clearfix"></div>

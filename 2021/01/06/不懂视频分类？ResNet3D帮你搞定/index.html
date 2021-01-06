@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://txyugood.gitee.io">
-  <title>Archives: 2021 | 人工智能研习社</title>
+  <title>不懂视频分类？ResNet3D帮你搞定 | 人工智能研习社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="人工智能研习社">
-<meta property="og:url" content="http://txyugood.gitee.io/archives/2021/index.html">
+  <meta name="description" content="随着短视频应用火爆全网，现在各种短视频已经占据了全网50%以上的流量，那么如何对短视频分类就成了一个问题。目前，我们使用卷积网络可以有效的对图片进行分类，同时精度也比较高。那么神经网络是否可以对视频分类呢？答案是肯定的，本文带你使用ResNet3D网络来完成视频分类任务。 本文对ResNet3D论文解读和复现，ResNet3D网络主要内容出自以下两篇论文： 《Can Spatiotemporal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不懂视频分类？ResNet3D帮你搞定">
+<meta property="og:url" content="http://txyugood.gitee.io/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/index.html">
 <meta property="og:site_name" content="人工智能研习社">
+<meta property="og:description" content="随着短视频应用火爆全网，现在各种短视频已经占据了全网50%以上的流量，那么如何对短视频分类就成了一个问题。目前，我们使用卷积网络可以有效的对图片进行分类，同时精度也比较高。那么神经网络是否可以对视频分类呢？答案是肯定的，本文带你使用ResNet3D网络来完成视频分类任务。 本文对ResNet3D论文解读和复现，ResNet3D网络主要内容出自以下两篇论文： 《Can Spatiotemporal">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/1.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/2.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/3.png">
+<meta property="og:image" content="http://txyugood.gitee.io/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/4.png">
+<meta property="article:published_time" content="2021-01-06T04:50:03.000Z">
+<meta property="article:modified_time" content="2021-01-06T04:54:49.798Z">
 <meta property="article:author" content="人工智能研习社">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://txyugood.gitee.io/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/1.png">
   
     <link rel="alternative" href="/atom.xml" title="人工智能研习社" type="application/atom+xml">
   
@@ -118,105 +128,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-不懂视频分类？ResNet3D帮你搞定" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/06/tags/" class="archive-article-date">
-  	<time datetime="2021-01-06T04:59:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/06/tags/">tags</a>
+    <h1 class="article-title" itemprop="name">
+      不懂视频分类？ResNet3D帮你搞定
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/06/%E6%AF%8F%E5%A4%A9%E5%AD%A6%E4%B8%80%E7%82%B9paddlepaddle-%E7%AC%AC1%E5%A4%A9-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2021-01-06T04:56:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/06/%E6%AF%8F%E5%A4%A9%E5%AD%A6%E4%B8%80%E7%82%B9paddlepaddle-%E7%AC%AC1%E5%A4%A9-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">每天学一点paddlepaddle-第1天 环境搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每天学paddle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/" class="archive-article-date">
+        
+        <a href="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/" class="archive-article-date">
   	<time datetime="2021-01-06T04:50:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/">不懂视频分类？ResNet3D帮你搞定</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着短视频应用火爆全网，现在各种短视频已经占据了全网50%以上的流量，那么如何对短视频分类就成了一个问题。目前，我们使用卷积网络可以有效的对图片进行分类，同时精度也比较高。那么神经网络是否可以对视频分类呢？答案是肯定的，本文带你使用ResNet3D网络来完成视频分类任务。</p>
+<p>本文对ResNet3D论文解读和复现，ResNet3D网络主要内容出自以下两篇论文：</p>
+<p><a target="_blank" rel="noopener" href="http://openaccess.thecvf.com/content_cvpr_2018/html/Hara_Can_Spatiotemporal_3D_CVPR_2018_paper.html">《Can Spatiotemporal 3D CNNs Retrace the History of 2D CNNs and ImageNet?》</a></p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2004.04968">《Would Mega-scale Datasets Further Enhance Spatiotemporal 3D CNNs》</a></p>
+<p>论文项目地址:<br><a target="_blank" rel="noopener" href="https://github.com/kenshohara/3D-ResNets-PyTorch">https://github.com/kenshohara/3D-ResNets-PyTorch</a></p>
+<a id="more"></a>
+<h3 id="1-目标"><a href="#1-目标" class="headerlink" title="1.目标"></a>1.目标</h3><p>这里我们先简单介绍一下第一篇论文《Can Spatiotemporal 3D CNNs Retrace the History of 2D CNNs and ImageNet?》的目标。我们已经知道CNN网络在CV领域已经取得了巨大的成功，在大量的图片数据集下，比如ImageNet数据集，CNN网络可以取得较高的精度。那么使用目前已有的视频数据集，将现有的CNN网络的2维卷积核调整为3维卷积核，是否有充足的数据可以满足CNN网络的训练需求？文中主要使用ResNet3D网络对此进行了验证。</p>
+<p>第二篇论文《Would Mega-scale Datasets Further Enhance Spatiotemporal 3D CNNs》是在第一篇的基础上进行的工作，其目标是希望验证超大规模的数据集是否可以增强CNN网络的性能。</p>
+<h3 id="2-工作内容"><a href="#2-工作内容" class="headerlink" title="2.工作内容"></a>2.工作内容</h3><p>在第一篇论文中，论文作者发现只有在Kinetics400这种大规模数据集上，ResNet系列模型才能很好的收敛。在UCF101、HMDB-51和ActivityNet上模型都会出现过拟合的情况，很难训练出高精度的模型。在Kinetics400数据上，随着模型的深度增加，比如在ResNet152之后，精度提升就很微弱了。这里说明了如果有大规模的数据集是可以使用3D的CNN网络进行训练的。既然有了大规模数据集训练好的模型，就可以在小规模的数据集上进行微调训练，作者取得了不错的结果。<br><img src="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/1.png" alt="在这里插入图片描述"><br>第二篇论文在第一篇论文的基础上，对不同的大规模数据集进行融合，得到了不同的组合超大规模的数据集，分别训练出不同层数ResNet3D网络。保存模型权重可以作为预训练权重，在小规模数据集上进行微调训练，在不同数据集和模型上都得到了不同程度的精度提升。</p>
+<h3 id="3-模型结构"><a href="#3-模型结构" class="headerlink" title="3.模型结构"></a>3.模型结构</h3><p>通常做图像分类使用的ResNet网络的卷积核一般只是在2D图像上做滑动窗口，计算特征图，卷积核的形状一般为[out_channel, in_channel, W, H]。而在视频分类任务中一般对网络输入的是视频中的一段序列，比如16帧或32帧，这样在原有WH维度上又增加了一个时间T的维度，卷积核的形状为 [out_channel, in_channel, T, W, H]。这时，卷积核不止在2D平面上滑动，还需要在第三个维度T上移动，提取帧之间的关联特征。这样就需要对2D的ResNet进行改造，将其改造为3D的ResNet网络。ResNet3D保持原有的ResNet的整体架构不变，替换每个block中的basicblock或bottleneckblock中的卷积核为Conv3D,同时池化层也需要替换为3D池化。<br><img src="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/2.png" alt="在这里插入图片描述"><br>整体网络结构描述如下：<br><img src="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/3.png" alt="在这里插入图片描述"></p>
+<h3 id="4-训练方法"><a href="#4-训练方法" class="headerlink" title="4.训练方法"></a>4.训练方法</h3><p>第一篇论文中在Kinetics400数据集上训练使用宽和高均为112像素，16帧的RGB图像作为输入样本。同时使用5种不同尺寸的裁剪方式对图像进行随机裁剪，同时添加了随机水平翻转，进行数据增强。使用交叉熵作为损失函数，同时使用SDG优化器，设置正则化系数为0.001，动量系数设置为0.9，起始学习率为0.1。如果在10个epochs之后，验证集的损失没有减小，则学习率除以10。在小数据集上进行模型微调时设置SDG优化器学习率为0.001，同时正则化系数设置为1e-5。同时作者在多次实验得出结论：在训练时，冻结前4个block，只微调第5个block和全连接层的权重可以得到更好的结果。</p>
+<p>第二篇论文在第一篇论文训练策略的基础上进行了调整，因为是使用超大规模数据集对模型进行微调，所以其他参数不变，只是将SGD优化器的起始学习率设置为0.003，正则化系数和动量系数保持0.001和0.9。</p>
+<h3 id="5-实验结果"><a href="#5-实验结果" class="headerlink" title="5.实验结果"></a>5.实验结果</h3><p>通过在多种超大规模数据集和多种模型结构组合训练得出以下结果。<br><img src="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/4.png" alt="在这里插入图片描述"><br>本次复现的条件和目标如下，</p>
+<p>预训练模型：K+M数据集上的ResNet50预训练权重</p>
+<p>数据集：UCF-101</p>
+<p>目标：Top1为92.9%</p>
+<h3 id="6-论文复现"><a href="#6-论文复现" class="headerlink" title="6.论文复现"></a>6.论文复现</h3><p>项目地址:<br><a target="_blank" rel="noopener" href="https://github.com/txyugood/Paddle-3D-ResNets">https://github.com/txyugood/Paddle-3D-ResNets</a></p>
+<p>1.下载解压数据集<br>数据集地址数据集地址：<br><a target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/datasetdetail/48916">https://aistudio.baidu.com/aistudio/datasetdetail/48916</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir dataset/</span><br><span class="line">unzip UCF-101.zip -d dataset/</span><br></pre></td></tr></table></figure>
+<p>2.视频转换为图片</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/aistudio/dataset/UCF-101-jpg/</span><br><span class="line"><span class="built_in">cd</span> Paddle-ResNets/ &amp;&amp; python generate_video_jpgs.py /home/aistudio/dataset/UCF-101 /home/aistudio/dataset/UCF-101-jpg/ ucf101</span><br></pre></td></tr></table></figure>
+<p>3.转换pytorch预训练模型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install torch==0.4.1</span><br><span class="line"><span class="built_in">cd</span> Paddle-ResNets/model/ &amp;&amp; python convert_to_paddle.py</span><br></pre></td></tr></table></figure>
+<p>4.训练网络<br>在训练过程中进行clips准确率验证，并保存clips准确率最高的模型,最终clips准确率90%。</p>
+<p>训练方法：</p>
+<ul>
+<li><p>训练时开启4进程读取,将数据集分为4块，batch_size 为128，以异步方式读取数据进行模型训练。</p>
+</li>
+<li><p> 每次迭代总训练时间为2.3秒左右，数据读取时间为1.8秒左右，</p>
+</li>
+<li><p> CPU使用率已接近100%，内存占用在80-90%之间。</p>
+</li>
+<li><p> GPU使用率50%,可见训练瓶颈在CPU读取数据部分，若CPU和内存扩容，还可以继续提升训练速度。</p>
+</li>
+<li><p>训练使用的优化器为Momentum,学习率0.003，momentun=0.9 L2Decay为0.001.</p>
+</li>
+<li><p>数据增强方式选择RandomResizedCrop方式。</p>
+</li>
+<li><p>按照论文中提到的方法，冻结Resnet50网络的conv1、conv2、conv3和conv4，只训练conv5和fc层。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Paddle-ResNets/ &amp;&amp; python train.py</span><br></pre></td></tr></table></figure>
+<p>5.验证网络<br>按照论文的方法将视频以16帧为一个clip进行分割，最后计算一个视频的所有clips的平均值作为视频的分类结果。</p>
+<p>最后会生成val.json文件供计算top-1准确率使用。这里与pytorch版本代码逻辑一致。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Paddle-ResNets/ &amp;&amp; python test.py</span><br></pre></td></tr></table></figure>
+<p>6.计算准确率<br>Top-1准确率为93.55% 超过论文中的92.9%。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Paddle-ResNets/ &amp;&amp; python eval_accuracy.py</span><br><span class="line">load ground truth</span><br><span class="line">number of ground truth: 3783</span><br><span class="line">load result</span><br><span class="line">number of result: 3783</span><br><span class="line">calculate top-1 accuracy</span><br><span class="line">top-1 accuracy: 0.9355009251916468</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -228,95 +213,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://txyugood.gitee.io/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2021-01-06T04:39:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/01/06/%E6%AF%8F%E5%A4%A9%E5%AD%A6%E4%B8%80%E7%82%B9paddlepaddle-%E7%AC%AC1%E5%A4%A9-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          每天学一点paddlepaddle-第1天 环境搭建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">手把手带你实现基于深度学习的垃圾分类器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/">手把手带你实现基于深度学习的垃圾分类器</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2021-01-06T02:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/">基于飞桨复现-CVPR2018-Relation-Net小样本学习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -339,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
