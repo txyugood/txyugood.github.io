@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>人工智能研习社</title>
+  <title>手把手带你实现基于深度学习的垃圾分类器 | 人工智能研习社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="人工智能研习社">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="随着PaddlePaddle2.0的更新，PaddleClas图像分类套件也更新到了2.0-rc1版本。新版本的PaddleClas套件已经默认使用动态图来进行模型训练。现在我们使用PaddleClas套件从零开始实现一个简单的垃圾分类器。来体验一下新版本的PaddleClas的的方便快捷，即使初学者也能快速的训练出高精度的模型。本篇文章分为上下两部分，上部讲解如何从零开始训练，下部讲解部分核心代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手把手带你实现基于深度学习的垃圾分类器">
+<meta property="og:url" content="http://example.com/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/index.html">
 <meta property="og:site_name" content="人工智能研习社">
+<meta property="og:description" content="随着PaddlePaddle2.0的更新，PaddleClas图像分类套件也更新到了2.0-rc1版本。新版本的PaddleClas套件已经默认使用动态图来进行模型训练。现在我们使用PaddleClas套件从零开始实现一个简单的垃圾分类器。来体验一下新版本的PaddleClas的的方便快捷，即使初学者也能快速的训练出高精度的模型。本篇文章分为上下两部分，上部讲解如何从零开始训练，下部讲解部分核心代">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-06T04:39:21.000Z">
+<meta property="article:modified_time" content="2021-01-06T04:44:23.844Z">
 <meta property="article:author" content="人工智能研习社">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人工智能研习社" type="application/atom+xml">
@@ -118,16 +123,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-手把手带你实现基于深度学习的垃圾分类器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-手把手带你实现基于深度学习的垃圾分类器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/">手把手带你实现基于深度学习的垃圾分类器</a>
+    <h1 class="article-title" itemprop="name">
+      手把手带你实现基于深度学习的垃圾分类器
     </h1>
   
 
@@ -195,16 +198,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于飞桨复现-CVPR2018-Relation-Net小样本学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -224,73 +286,14 @@
 
 
 
-
   
-    <article id="post-基于飞桨复现-CVPR2018-Relation-Net小样本学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/">基于飞桨复现-CVPR2018-Relation-Net小样本学习</a>
-    </h1>
   
 
-        
-        <a href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2021-01-06T02:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Relation Net 是 CVPR2018的一篇论文，论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.06025%E3%80%82">https://arxiv.org/abs/1711.06025。</a><br><img src="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/1.png" alt="在这里插入图片描述"><br>深度学习在视觉识别任务中取得巨大的成功，文章作者指出训练模型需要大量标注过的图片，同时需要迭代多次去训练参数。每当添加新的物体类别需要花费时间去标注，同时有一些新兴物体类别和稀有物体类别可能根本不存在大量的标注过的图片。而人类是只要很少的认知学习就可实现小样本（FSL）和无样本学习(ZSL)。作者举了一个例子，小孩子只要在一张图片或一本书里认识了斑马，或者只是听到描述斑马是一种”条纹马”，就可以毫无困难的识别出斑马这种动物。为了解决深度学习中样本很少模型的分类效果就会很差的问题，同时又受到人类的小样本和无样本学习能力带来的启发，小样本学习又恢复了一些热度。深度学习中的Fine-tune技术可以用于一些样本比较少的情况，但是在只有一个或者几个样本的情况下，即使使用了数据增强和正则化技术，仍然会有过拟合的问题。目前其他的小样本学习的推理机制又比较复杂，所以论文作者提出了一个可以端到端训练，并且结构简单的模型 Relation Net。</p>
-        
-          <a class="article-more-a" href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -313,8 +316,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
