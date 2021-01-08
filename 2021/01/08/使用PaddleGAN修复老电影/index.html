@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://txyugood.github.io">
   <title>使用PaddleGAN修复老电影 | 人工智能研习社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出多种有趣应用，例如图片变化、超分辨率、动作迁移等。 本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN实现老电影修复，首先我们先看看修复效果吧。    怎么样？效果还算可以吧。下面我将带领大家一步一步实现老电影修">
+  <meta name="description" content="GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出许多有趣应用，例如图片变化、超分辨率、动作迁移等。 本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN，实现老电影修复。 首先我们先看看修复效果吧。    怎么样？效果还不错吧。下面我将带领大家一步一步实现老电影">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用PaddleGAN修复老电影">
 <meta property="og:url" content="http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/index.html">
 <meta property="og:site_name" content="人工智能研习社">
-<meta property="og:description" content="GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出多种有趣应用，例如图片变化、超分辨率、动作迁移等。 本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN实现老电影修复，首先我们先看看修复效果吧。    怎么样？效果还算可以吧。下面我将带领大家一步一步实现老电影修">
+<meta property="og:description" content="GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出许多有趣应用，例如图片变化、超分辨率、动作迁移等。 本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN，实现老电影修复。 首先我们先看看修复效果吧。    怎么样？效果还不错吧。下面我将带领大家一步一步实现老电影">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/1.jpeg">
 <meta property="og:image" content="http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/2.jpeg">
 <meta property="article:published_time" content="2021-01-08T08:00:14.000Z">
-<meta property="article:modified_time" content="2021-01-08T11:25:59.488Z">
+<meta property="article:modified_time" content="2021-01-08T12:14:33.577Z">
 <meta property="article:author" content="人工智能研习社">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="GAN">
@@ -169,14 +169,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出多种有趣应用，例如图片变化、超分辨率、动作迁移等。</p>
-<p>本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN实现老电影修复，首先我们先看看修复效果吧。</p>
+        <p>GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出许多有趣应用，例如图片变化、超分辨率、动作迁移等。</p>
+<p>本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN，实现老电影修复。</p>
+<p>首先我们先看看修复效果吧。</p>
 <img src="/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/1.jpeg" width="300">
 <img src="/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/2.jpeg" width="300">
 
-<p>怎么样？效果还算可以吧。下面我将带领大家一步一步实现老电影修复。</p>
+<p>怎么样？效果还不错吧。下面我将带领大家一步一步实现老电影修复。</p>
 <a id="more"></a>
-<h3 id="1-安装PaddleGAN套件"><a href="#1-安装PaddleGAN套件" class="headerlink" title="1.安装PaddleGAN套件"></a>1.安装PaddleGAN套件</h3><p>可是直接从github上下载。</p>
+<h3 id="1-安装PaddleGAN套件"><a href="#1-安装PaddleGAN套件" class="headerlink" title="1.安装PaddleGAN套件"></a>1.安装PaddleGAN套件</h3><p>源码可以直接从github上下载。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/PaddlePaddle/PaddleGAN.git</span><br></pre></td></tr></table></figure>
 <p>也可以通过本文末尾的地址打包下载。</p>
 <p>然后确定一下本机的python版本以及CUDA版本，这里注意需要使用显卡运行PaddleGAN套件，否则速度会非常慢。</p>
@@ -198,19 +199,22 @@
 <p>安装依赖包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirments.txt -i https:&#x2F;&#x2F;pypi.douban.com&#x2F;simple</span><br></pre></td></tr></table></figure>
 <h3 id="2-修复老电影"><a href="#2-修复老电影" class="headerlink" title="2.修复老电影"></a>2.修复老电影</h3><p>首先需要自己准备一段几分钟的黑白视频片段，如果没有也可以通过本文末尾的地址下载本程序中的例子。<br>进入applications目录执行脚本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> applications</span><br><span class="line">python tools/video-enhance.py --input xiaobing1.mp4 --process_order DAIN DeOldify  --output /home/aistudio/output_dir</span><br></pre></td></tr></table></figure>
-<p>–input 指定输入的视频文件的路径。<br>–output 指定输出修复视频保存的路径。<br>–process_order 指定算法，算法会按顺序执行。<br>目前修复工具支持以下算法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> applications</span><br><span class="line">python tools/video-enhance.py --input xiaobing1.mp4 --process_order  DeOldify  --output /home/aistudio/output_dir</span><br></pre></td></tr></table></figure>
+<p>–input 指定输入的视频文件的路径。</p>
+<p>–output 指定输出修复视频保存的路径。</p>
+<p>–process_order 指定算法，算法会按顺序执行。</p>
+<p>目前修复工具支持以下算法：</p>
 <ul>
 <li>DAIN:插帧算法，会对原始视频进行2倍帧率的插帧。</li>
-<li>DeepRemaster:视频修复，一般使用在原始视频存在模糊情况下使用</li>
+<li>DeepRemaster:视频修复，一般当原始视频存在模糊的情况下使用</li>
 <li>DeOldify:上色修复，对黑白视频进行上色，例如本文开头的效果图</li>
-<li>RealSR:超分辨率，可以增大视频的分辨率，同时保证清晰度，比较适合分辨率比较好的视频</li>
-<li>EDVR:超分辨率，可以增大视频的分辨率，同时保证清晰度，比较适合分辨率比较好的视频</li>
+<li>RealSR:超分辨率，可以增大视频的分辨率，同时保证清晰度，适合分辨率比较低的视频</li>
+<li>EDVR:超分辨率，可以增大视频的分辨率，同时保证清晰度，适合分辨率比较低的视频</li>
 </ul>
-<p>以上算法可根据实际情况适当组合。例子中的原始视频，分辨率以足够，所以没有使用超分辨率算法。</p>
+<p>以上算法可根据实际情况适当组合。例子中的原始视频的分辨率足够高，所以没有使用超分辨率算法。</p>
 <p>执行代码后，控制台输出以下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">You are using Paddle compiled with TensorRT, but TensorRT dynamic library is not found. Ignore this <span class="keyword">if</span> TensorRT is not needed.Model DeOldify proccess start..</span><br><span class="line">W0108 18:59:55.299445  5019 device_context.cc:338] Please NOTE: device: 0, CUDA Capability: 70, Driver API Version: 11.0, Runtime API Version: 10.1</span><br><span class="line">W0108 18:59:55.304046  5019 device_context.cc:346] device: 0, cuDNN Version: 7.6.</span><br><span class="line">[01/08 18:59:59] ppgan INFO: Found /home/aistudio/.cache/ppgan/DeOldify_stable.pdparams</span><br><span class="line">  1%|▍                                                                                  | 10/1806 [00:09&lt;29:50,  1.00it/s]</span><br></pre></td></tr></table></figure>
-<p>运行时间可能会比较长，结束后会在–output指定的路径生成修复好的视频。</p>
+<p>程序运行的时间可能会比较长。程序的运行时间受输入视频的长度和、分辨率以及采用的算法组合影响。运行结束后会在–output指定的路径生成修复好的视频。</p>
 <p>源码及样例视频下载地址:<br><a target="_blank" rel="noopener" href="https://blog.aistudyclub.com/2021/01/08/PaddleGAN-Download/index.html">https://blog.aistudyclub.com/2021/01/08/PaddleGAN-Download/index.html</a></p>
 
       
