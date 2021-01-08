@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://txyugood.github.io">
-  <title>欢迎关注我的公众号 | 人工智能研习社</title>
+  <title>使用PaddleGAN修复老电影 | 人工智能研习社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="欢迎关注我的公众号">
-<meta property="og:url" content="http://txyugood.github.io/2021/01/07/%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/index.html">
+  <meta name="description" content="GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出多种有趣应用，例如图片变化、超分辨率、动作迁移等。 本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN实现老电影修复，首先我们先看看修复效果吧。    怎么样？效果还算可以吧。下面我将带领大家一步一步实现老电影修">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用PaddleGAN修复老电影">
+<meta property="og:url" content="http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/index.html">
 <meta property="og:site_name" content="人工智能研习社">
+<meta property="og:description" content="GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出多种有趣应用，例如图片变化、超分辨率、动作迁移等。 本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN实现老电影修复，首先我们先看看修复效果吧。    怎么样？效果还算可以吧。下面我将带领大家一步一步实现老电影修">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://txyugood.github.io/2021/01/07/%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/bottom.jpg">
-<meta property="article:published_time" content="2021-01-07T15:08:01.000Z">
-<meta property="article:modified_time" content="2021-01-07T15:23:09.377Z">
+<meta property="og:image" content="http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/1.jpeg">
+<meta property="og:image" content="http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/2.jpeg">
+<meta property="article:published_time" content="2021-01-08T08:00:14.000Z">
+<meta property="article:modified_time" content="2021-01-08T11:06:59.524Z">
 <meta property="article:author" content="人工智能研习社">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="GAN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://txyugood.github.io/2021/01/07/%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/bottom.jpg">
+<meta name="twitter:image" content="http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="人工智能研习社" type="application/atom+xml">
   
@@ -144,28 +149,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-欢迎关注我的公众号" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-使用PaddleGAN修复老电影" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      欢迎关注我的公众号
+      使用PaddleGAN修复老电影
     </h1>
   
 
         
-        <a href="/2021/01/07/%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/" class="archive-article-date">
-  	<time datetime="2021-01-07T15:08:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-07</time>
+        <a href="/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/" class="archive-article-date">
+  	<time datetime="2021-01-08T08:00:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- ![](欢迎关注我的公众号/bottom.jpg) -->
-<img src="/2021/01/07/%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/bottom.jpg" width="600">
+        <p>GAN对抗生成网络，被“卷积网络之父”Yann LeCun（杨立昆）誉为「过去十年计算机科学领域最有趣的想法之一」，近年来火遍全网。研究人员们使用GAN构建出多种有趣应用，例如图片变化、超分辨率、动作迁移等。</p>
+<p>本文带大家使用基于百度PaddlePaddle框架的GAN套件PaddleGAN实现老电影修复，首先我们先看看修复效果吧。</p>
+<img src="/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/1.jpeg" width="300">
+<img src="/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/2.jpeg" width="300">
+
+<p>怎么样？效果还算可以吧。下面我将带领大家一步一步实现老电影修复。</p>
+<h3 id="1-安装PaddleGAN套件"><a href="#1-安装PaddleGAN套件" class="headerlink" title="1.安装PaddleGAN套件"></a>1.安装PaddleGAN套件</h3><p>可是直接从github上下载。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/PaddlePaddle/PaddleGAN.git</span><br></pre></td></tr></table></figure>
+<p>也可以通过本文末尾的地址打包下载。</p>
+<p>然后确定一下本机的python版本以及CUDA版本，这里注意需要使用显卡运行PaddleGAN套件，否则速度会非常慢。</p>
+<table class="docutils"><tbody><th width="80"> CUDA </th><th valign="bottom" align="left" width="100">python3.8</th><th valign="bottom" align="left" width="100">python3.7</th><th valign="bottom" align="left" width="100">python3.6</th> <tr><td align="left">10.1</td><td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda10.1-cudnn7-mkl_gcc8.2%2Fpaddlepaddle_gpu-2.0.0rc0.post101-cp38-cp38-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda10.1-cudnn7-mkl_gcc8.2%2Fpaddlepaddle_gpu-2.0.0rc0.post101-cp37-cp37m-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda10.1-cudnn7-mkl_gcc8.2%2Fpaddlepaddle_gpu-2.0.0rc0.post101-cp36-cp36m-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"> </td> </tr> <tr><td align="left">10.0</td><td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda10-cudnn7-mkl%2Fpaddlepaddle_gpu-2.0.0rc0.post100-cp38-cp38-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda10-cudnn7-mkl%2Fpaddlepaddle_gpu-2.0.0rc0.post100-cp37-cp37m-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda10-cudnn7-mkl%2Fpaddlepaddle_gpu-2.0.0rc0.post100-cp36-cp36m-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"> </td> </tr> <tr><td align="left">9.0</td><td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda9-cudnn7-mkl%2Fpaddlepaddle_gpu-2.0.0rc0.post90-cp38-cp38-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda9-cudnn7-mkl%2Fpaddlepaddle_gpu-2.0.0rc0.post90-cp37-cp37m-linux_x86_64.whl
+</code></pre> </details> </td> <td align="left"><details><summary> install </summary><pre><code>python -m pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda9-cudnn7-mkl%2Fpaddlepaddle_gpu-2.0.0rc0.post90-cp36-cp36m-linux_x86_64.whl
+</code></pre> </details> </td> </tr></tbody></table>
+
+<p>下载对应版本的paddlepaddle框架后，使用以下命令安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install https://paddle-wheel.bj.bcebos.com/2.0.0-rc0-gpu-cuda10.1-cudnn7-mkl_gcc8.2%2Fpaddlepaddle_gpu-2.0.0rc0.post101-cp37-cp37m-linux_x86_64.whl</span><br></pre></td></tr></table></figure>
+<p>然后安装PaddleGAN套件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> PaddleGAN/</span><br><span class="line">pip install -v -e .</span><br></pre></td></tr></table></figure>
+<p>安装依赖包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirments.txt -i https:&#x2F;&#x2F;pypi.douban.com&#x2F;simple</span><br></pre></td></tr></table></figure>
+<h3 id="2-修复老电影"><a href="#2-修复老电影" class="headerlink" title="2.修复老电影"></a>2.修复老电影</h3><p>首先需要自己准备一段几分钟的黑白视频片段，如果没有也可以通过本文末尾的地址下载本程序中的例子。<br>进入applications目录执行脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> applications</span><br><span class="line">python tools/video-enhance.py --input xiaobing1.mp4 --process_order DAIN DeOldify  --output /home/aistudio/output_dir</span><br></pre></td></tr></table></figure>
+<p>–input 指定输入的视频文件的路径。<br>–output 指定输出修复视频保存的路径。<br>–process_order 指定算法，算法会按顺序执行。<br>目前修复工具支持以下算法：</p>
+<ul>
+<li>DAIN:插帧算法，会对原始视频进行2倍帧率的插帧。</li>
+<li>DeepRemaster:视频修复，一般使用在原始视频存在模糊情况下使用</li>
+<li>DeOldify:上色修复，对黑白视频进行上色，例如本文开头的效果图</li>
+<li>RealSR:超分辨率，可以增大视频的分辨率，同时保证清晰度，比较适合分辨率比较好的视频</li>
+<li>EDVR:超分辨率，可以增大视频的分辨率，同时保证清晰度，比较适合分辨率比较好的视频</li>
+</ul>
+<p>以上算法可根据实际情况适当组合。例子中的原始视频，分辨率以足够，所以没有使用超分辨率算法。</p>
+<p>执行代码后，控制台输出以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">You are using Paddle compiled with TensorRT, but TensorRT dynamic library is not found. Ignore this <span class="keyword">if</span> TensorRT is not needed.Model DeOldify proccess start..</span><br><span class="line">W0108 18:59:55.299445  5019 device_context.cc:338] Please NOTE: device: 0, CUDA Capability: 70, Driver API Version: 11.0, Runtime API Version: 10.1</span><br><span class="line">W0108 18:59:55.304046  5019 device_context.cc:346] device: 0, cuDNN Version: 7.6.</span><br><span class="line">[01/08 18:59:59] ppgan INFO: Found /home/aistudio/.cache/ppgan/DeOldify_stable.pdparams</span><br><span class="line">  1%|▍                                                                                  | 10/1806 [00:09&lt;29:50,  1.00it/s]</span><br></pre></td></tr></table></figure>
+<p>运行时间可能会比较长，结束后会在</p>
+<p>源码及样例视频下载地址:</p>
 
       
 
@@ -194,12 +239,22 @@
     </div>
     <div class="article-info article-info-index">
       
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
-      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GAN</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -250,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://txyugood.github.io/2021/01/07/%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://txyugood.github.io/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,18 +319,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/08/%E4%BD%BF%E7%94%A8PaddleGAN%E4%BF%AE%E5%A4%8D%E8%80%81%E7%94%B5%E5%BD%B1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/01/08/PaddleGAN-Download/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          使用PaddleGAN修复老电影
+          PaddleGAN_Download
         
       </div>
     </a>
   
   
-    <a href="/2021/01/06/%E6%AF%8F%E5%A4%A9%E5%AD%A6%E4%B8%80%E7%82%B9paddlepaddle-%E7%AC%AC1%E5%A4%A9-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">每天学一点paddlepaddle-第1天 环境搭建</div>
+    <a href="/2021/01/07/%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">欢迎关注我的公众号</div>
       <i class="icon-circle-right"></i>
     </a>
   
