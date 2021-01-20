@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://txyugood.github.io">
-  <title>手把手带你实现基于深度学习的垃圾分类器 | 人工智能研习社</title>
+  <title>Tag: 机器学习 | 人工智能研习社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随着PaddlePaddle2.0的更新，PaddleClas图像分类套件也更新到了2.0-rc1版本。新版本的PaddleClas套件已经默认使用动态图来进行模型训练。现在我们使用PaddleClas套件从零开始实现一个简单的垃圾分类器。来体验一下新版本的PaddleClas的的方便快捷，即使初学者也能快速的训练出高精度的模型。本篇文章分为上下两部分，上部讲解如何从零开始训练，下部讲解部分核心代">
-<meta property="og:type" content="article">
-<meta property="og:title" content="手把手带你实现基于深度学习的垃圾分类器">
-<meta property="og:url" content="http://txyugood.github.io/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="人工智能研习社">
+<meta property="og:url" content="http://txyugood.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="人工智能研习社">
-<meta property="og:description" content="随着PaddlePaddle2.0的更新，PaddleClas图像分类套件也更新到了2.0-rc1版本。新版本的PaddleClas套件已经默认使用动态图来进行模型训练。现在我们使用PaddleClas套件从零开始实现一个简单的垃圾分类器。来体验一下新版本的PaddleClas的的方便快捷，即使初学者也能快速的训练出高精度的模型。本篇文章分为上下两部分，上部讲解如何从零开始训练，下部讲解部分核心代">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-06T04:39:21.000Z">
-<meta property="article:modified_time" content="2021-01-06T04:45:13.892Z">
 <meta property="article:author" content="人工智能研习社">
-<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="人工智能研习社" type="application/atom+xml">
@@ -145,210 +140,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-手把手带你实现基于深度学习的垃圾分类器" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      手把手带你实现基于深度学习的垃圾分类器
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/01/20/machinelearning2/" class="archive-article-date">
+  	<time datetime="2021-01-20T14:08:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-20</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/01/20/machinelearning2/">手把手带你入门机器学习2——线性回归代码实现</a>
     </h1>
   
 
-        
-        <a href="/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2021-01-06T04:39:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
-</a>
-        
-
-        
-          <span class="archive-article-date">
-              阅读量 <span id="busuanzi_value_page_pv"></span>
-          </span>
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>随着PaddlePaddle2.0的更新，PaddleClas图像分类套件也更新到了2.0-rc1版本。新版本的PaddleClas套件已经默认使用动态图来进行模型训练。现在我们使用PaddleClas套件从零开始实现一个简单的垃圾分类器。来体验一下新版本的PaddleClas的的方便快捷，即使初学者也能快速的训练出高精度的模型。本篇文章分为上下两部分，上部讲解如何从零开始训练，下部讲解部分核心代码以及深度学习训练过程中使用到的技术。<br><a id="more"></a></p>
-<h3 id="1-准备数据集"><a href="#1-准备数据集" class="headerlink" title="1.准备数据集"></a>1.准备数据集</h3><p>数据集下载地址:<br><a target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/datasetdetail/64185">https://aistudio.baidu.com/aistudio/datasetdetail/64185</a><br>下载好数据集之后，首先需要解压压缩包。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir dataset</span><br><span class="line"><span class="built_in">cd</span> dataset</span><br><span class="line">unzip garbage_classify.zip</span><br></pre></td></tr></table></figure>
-<p>数据集中共包含43个分类，例如：9代表”厨余垃圾/水果果肉”、22代表”可回收物/旧衣服、39代表有害垃圾/过期药物”。具体类别可以查看garbage_classify中的garbage_classify_rule.json文件。</p>
-<p>有了数据集之后，需要对数据集进行划分。在dataset目录下创建process_dataset.py文件，使用下列代码将数据集划分为训练集、验证集和测试集，划分比例为8:1:1。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">file_list = glob.glob(<span class="string">&#x27;./garbage_classify/train_data/*.txt&#x27;</span>)</span><br><span class="line">np.random.shuffle(file_list)</span><br><span class="line">train_len = <span class="built_in">len</span>(file_list) // <span class="number">10</span> * <span class="number">8</span></span><br><span class="line">val_len = <span class="built_in">len</span>(file_list) // <span class="number">10</span></span><br><span class="line">train_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> txt_file <span class="keyword">in</span> file_list[:train_len]:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(txt_file, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        line = f.readlines()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        line = line.strip()</span><br><span class="line">        image_file,label = line.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">        image_file = image_file.strip()</span><br><span class="line">        label = label.strip()</span><br><span class="line">        image_path = os.path.join(<span class="string">&#x27;./garbage_classify/train_data/&#x27;</span>, image_file)</span><br><span class="line">        train_list.append(image_path + <span class="string">&#x27; &#x27;</span> + label + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;train_list.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.writelines(train_list)</span><br><span class="line"></span><br><span class="line">val_list = []</span><br><span class="line"><span class="keyword">for</span> txt_file <span class="keyword">in</span> file_list[train_len:train_len + val_len]:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(txt_file, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        line = f.readlines()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        line = line.strip()</span><br><span class="line">        image_file,label = line.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">        image_file = image_file.strip()</span><br><span class="line">        label = label.strip()</span><br><span class="line">        image_path os.path.join(<span class="string">&#x27;./garbage_classify/train_data/&#x27;</span>, image_file)</span><br><span class="line">        val_list.append(image_path + <span class="string">&#x27; &#x27;</span> + label + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;val_list.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.writelines(val_list)</span><br><span class="line"></span><br><span class="line">test_list = []</span><br><span class="line"><span class="keyword">for</span> txt_file <span class="keyword">in</span> file_list[train_len + val_len:]:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(txt_file, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        line = f.readlines()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        line = line.strip()</span><br><span class="line">        image_file,label = line.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">        image_file = image_file.strip()</span><br><span class="line">        label = label.strip()</span><br><span class="line">        image_path = os.path.join(<span class="string">&#x27;./garbage_classify/train_data/&#x27;</span>, image_file)</span><br><span class="line">        test_list.append(image_path + <span class="string">&#x27; &#x27;</span> + label + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test_list.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.writelines(test_list)</span><br></pre></td></tr></table></figure>
-<p>以上代码运行结束后，目录结构如下：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├── garbage_classify</span><br><span class="line">├── process_dataset.py</span><br><span class="line">├── test_list.txt</span><br><span class="line">├── train_list.txt</span><br><span class="line">└── val_list.txt</span><br></pre></td></tr></table></figure>
-<h3 id="2-下载PaddleClas套件"><a href="#2-下载PaddleClas套件" class="headerlink" title="2.下载PaddleClas套件"></a>2.下载PaddleClas套件</h3><p>下载PaddleClas源代码，并切换到2.0-rc1版本。安装该套件依赖软件可参考以下文档:<br><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleClas/blob/release/2.0-rc1/docs/en/tutorials/install_en.md">https://github.com/PaddlePaddle/PaddleClas/blob/release/2.0-rc1/docs/en/tutorials/install_en.md</a><br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/PaddlePaddle/PaddleClas.git</span><br><span class="line">git fetch</span><br><span class="line">git branch release/<span class="number">2.0</span><span class="literal">-rc1</span> origin/release/<span class="number">2.0</span><span class="literal">-rc1</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3.修改配置文件"></a>3.修改配置文件</h3><p>PaddleClas套件中包含了多种神经网络模型，也包含了模型对应的训练参数，配置参数保存在configs路径下。本次的垃圾分类器我选择一个工业界常用的ResNet50网络作为分类器。首先通过拷贝的方式新建一个垃圾分类器的配置文件。<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> PaddleClas/configs/ResNet/</span><br><span class="line"><span class="built_in">cp</span> ResNet50_vd.yaml garbage_ResNet50_vd.yaml</span><br></pre></td></tr></table></figure><br>然后修改garbage_ResNet50_vd.yaml内容如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mode:</span> <span class="string">&#x27;train&#x27;</span></span><br><span class="line"><span class="attr">ARCHITECTURE:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">&#x27;ResNet50_vd&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pretrained_model:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">model_save_dir:</span> <span class="string">&quot;./output/&quot;</span></span><br><span class="line"><span class="attr">classes_num:</span> <span class="number">43</span></span><br><span class="line"><span class="attr">total_images:</span> <span class="number">1281167</span></span><br><span class="line"><span class="attr">save_interval:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">validate:</span> <span class="literal">True</span></span><br><span class="line"><span class="attr">valid_interval:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">epochs:</span> <span class="number">200</span></span><br><span class="line"><span class="attr">topk:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">image_shape:</span> [<span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">use_mix:</span> <span class="literal">False</span></span><br><span class="line"><span class="attr">ls_epsilon:</span> <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">LEARNING_RATE:</span></span><br><span class="line">    <span class="attr">function:</span> <span class="string">&#x27;Cosine&#x27;</span>          </span><br><span class="line">    <span class="attr">params:</span>                   </span><br><span class="line">        <span class="attr">lr:</span> <span class="number">0.001</span>               </span><br><span class="line"></span><br><span class="line"><span class="attr">OPTIMIZER:</span></span><br><span class="line">    <span class="attr">function:</span> <span class="string">&#x27;Momentum&#x27;</span></span><br><span class="line">    <span class="attr">params:</span></span><br><span class="line">        <span class="attr">momentum:</span> <span class="number">0.9</span></span><br><span class="line">    <span class="attr">regularizer:</span></span><br><span class="line">        <span class="attr">function:</span> <span class="string">&#x27;L2&#x27;</span></span><br><span class="line">        <span class="attr">factor:</span> <span class="number">0.000070</span></span><br><span class="line"></span><br><span class="line"><span class="attr">TRAIN:</span></span><br><span class="line">    <span class="attr">batch_size:</span> <span class="number">256</span></span><br><span class="line">    <span class="attr">num_workers:</span> <span class="number">0</span></span><br><span class="line">    <span class="comment">#这里改成dataset的真实路径，推荐使用绝对路径</span></span><br><span class="line">    <span class="attr">file_list:</span> <span class="string">&quot;../dataset/train_list.txt&quot;</span> </span><br><span class="line">    <span class="attr">data_dir:</span> <span class="string">&quot;../dataset/&quot;</span></span><br><span class="line">    <span class="attr">shuffle_seed:</span> <span class="number">0</span></span><br><span class="line">    <span class="attr">transforms:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">DecodeImage:</span></span><br><span class="line">            <span class="attr">to_rgb:</span> <span class="literal">True</span></span><br><span class="line">            <span class="attr">to_np:</span> <span class="literal">False</span></span><br><span class="line">            <span class="attr">channel_first:</span> <span class="literal">False</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">RandCropImage:</span></span><br><span class="line">            <span class="attr">size:</span> <span class="number">224</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">RandFlipImage:</span></span><br><span class="line">            <span class="attr">flip_code:</span> <span class="number">1</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">NormalizeImage:</span></span><br><span class="line">            <span class="attr">scale:</span> <span class="number">1</span><span class="string">./255.</span></span><br><span class="line">            <span class="attr">mean:</span> [<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]</span><br><span class="line">            <span class="attr">std:</span> [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>]</span><br><span class="line">            <span class="attr">order:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">ToCHWImage:</span></span><br><span class="line">    <span class="attr">mix:</span>                       </span><br><span class="line">        <span class="bullet">-</span> <span class="attr">MixupOperator:</span>    </span><br><span class="line">            <span class="attr">alpha:</span> <span class="number">0.2</span>      </span><br><span class="line"></span><br><span class="line"><span class="attr">VALID:</span></span><br><span class="line">    <span class="attr">batch_size:</span> <span class="number">64</span></span><br><span class="line">    <span class="attr">num_workers:</span> <span class="number">0</span></span><br><span class="line">    <span class="comment">#这里改成dataset的真实路径，推荐使用绝对路径</span></span><br><span class="line">    <span class="attr">file_list:</span> <span class="string">&quot;../dataset/val_list.txt&quot;</span></span><br><span class="line">    <span class="attr">data_dir:</span> <span class="string">&quot;../dataset/aistudio/&quot;</span></span><br><span class="line">    <span class="attr">shuffle_seed:</span> <span class="number">0</span></span><br><span class="line">    <span class="attr">transforms:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">DecodeImage:</span></span><br><span class="line">            <span class="attr">to_rgb:</span> <span class="literal">True</span></span><br><span class="line">            <span class="attr">to_np:</span> <span class="literal">False</span></span><br><span class="line">            <span class="attr">channel_first:</span> <span class="literal">False</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">ResizeImage:</span></span><br><span class="line">            <span class="attr">resize_short:</span> <span class="number">256</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">CropImage:</span></span><br><span class="line">            <span class="attr">size:</span> <span class="number">224</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">NormalizeImage:</span></span><br><span class="line">            <span class="attr">scale:</span> <span class="number">1.0</span><span class="string">/255.0</span></span><br><span class="line">            <span class="attr">mean:</span> [<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]</span><br><span class="line">            <span class="attr">std:</span> [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>]</span><br><span class="line">            <span class="attr">order:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">ToCHWImage:</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-开始训练"><a href="#4-开始训练" class="headerlink" title="4.开始训练"></a>4.开始训练</h3><p>为了加快模型的收敛，同时提升模型的精度，这里我选择先加载预训练模型，然后对模型进行微调。首先需要下载预训练权重。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">wget</span> https://paddle<span class="literal">-imagenet</span><span class="literal">-models</span><span class="literal">-name</span>.bj.bcebos.com/dygraph/ResNet50_vd_pretrained.pdparams</span><br></pre></td></tr></table></figure>
-<p>然后开始训练模型：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python tools/train.py \</span><br><span class="line">    -c configs/ResNet/garbage_ResNet50_vd.yaml \</span><br><span class="line">    -o pretrained_model=<span class="string">&quot;ResNet50_vd_pretrained&quot;</span> \</span><br><span class="line">    -o use_gpu=<span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>训练过程中输入日志如下：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">W1214 <span class="number">20</span>:<span class="number">29</span>:<span class="number">28.872682</span>  <span class="number">1473</span> device_context.cc:<span class="number">338</span>] Please NOTE: device: <span class="number">0</span>, CUDA Capability: <span class="number">70</span>, Driver API Version: <span class="number">10.1</span>, Runtime API Version: <span class="number">10.1</span></span><br><span class="line">W1214 <span class="number">20</span>:<span class="number">29</span>:<span class="number">28.877846</span>  <span class="number">1473</span> device_context.cc:<span class="number">346</span>] device: <span class="number">0</span>, cuDNN Version: <span class="number">7.6</span>.</span><br><span class="line">/opt/conda/envs/python35<span class="literal">-paddle120</span><span class="literal">-env</span>/lib/python3.<span class="number">7</span>/site<span class="literal">-packages</span>/paddle/fluid/dygraph/layers.py:<span class="number">1175</span>: UserWarning: Skip loading <span class="keyword">for</span> out.weight. out.weight receives a shape [<span class="number">2048</span>, <span class="number">1000</span>], but the expected shape is [<span class="number">2048</span>, <span class="number">43</span>].</span><br><span class="line">  warnings.warn((<span class="string">&quot;Skip loading for &#123;&#125;. &quot;</span>.format(key) + str(err)))</span><br><span class="line">/opt/conda/envs/python35<span class="literal">-paddle120</span><span class="literal">-env</span>/lib/python3.<span class="number">7</span>/site<span class="literal">-packages</span>/paddle/fluid/dygraph/layers.py:<span class="number">1175</span>: UserWarning: Skip loading <span class="keyword">for</span> out.bias. out.bias receives a shape [<span class="number">1000</span>], but the expected shape is [<span class="number">43</span>].</span><br><span class="line">  warnings.warn((<span class="string">&quot;Skip loading for &#123;&#125;. &quot;</span>.format(key) + str(err)))</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-14</span> <span class="number">20</span>:<span class="number">29</span>:<span class="number">33</span> INFO: Finish initing model from ResNet50_vd_pretrained</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-14</span> <span class="number">20</span>:<span class="number">29</span>:<span class="number">36</span> INFO: epoch:<span class="number">0</span>  , train step:<span class="number">0</span>   , loss: <span class="number">3.78009</span>, top1: <span class="number">0.00781</span>, top5: <span class="number">0.11328</span>, lr: <span class="number">0.001000</span>, batch_cost: <span class="number">2.94361</span> s, reader_cost: <span class="number">2.13878</span> s, ips: <span class="number">86.96806</span> images/sec.</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-14</span> <span class="number">20</span>:<span class="number">30</span>:<span class="number">01</span> INFO: epoch:<span class="number">0</span>  , train step:<span class="number">10</span>  , loss: <span class="number">3.70998</span>, top1: <span class="number">0.06641</span>, top5: <span class="number">0.26953</span>, lr: <span class="number">0.001000</span>, batch_cost: <span class="number">2.42268</span> s, reader_cost: <span class="number">1.62624</span> s, ips: <span class="number">105.66822</span> images/sec.</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-14</span> <span class="number">20</span>:<span class="number">30</span>:<span class="number">25</span> INFO: epoch:<span class="number">0</span>  , train step:<span class="number">20</span>  , loss: <span class="number">3.62013</span>, top1: <span class="number">0.10938</span>, top5: <span class="number">0.35938</span>, lr: <span class="number">0.001000</span>, batch_cost: <span class="number">2.43433</span> s, reader_cost: <span class="number">1.63609</span> s, ips: <span class="number">105.16244</span> images/sec.</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-14</span> <span class="number">20</span>:<span class="number">30</span>:<span class="number">50</span> INFO: epoch:<span class="number">0</span>  , train step:<span class="number">30</span>  , loss: <span class="number">3.53434</span>, top1: <span class="number">0.21484</span>, top5: <span class="number">0.41406</span>, lr: <span class="number">0.001000</span>, batch_cost: <span class="number">2.46094</span> s, reader_cost: <span class="number">1.66256</span> s, ips: <span class="number">104.02520</span> images/sec.</span><br></pre></td></tr></table></figure>
-<h3 id="5-模型评估"><a href="#5-模型评估" class="headerlink" title="5.模型评估"></a>5.模型评估</h3><p>为了可以快速的看到效果，训练100个epoch之后，可以先停止训练。当前最优模型在验证集上的精度为top1: 0.90589, top5: 0.98966。</p>
-<p>然后我们在测试集上评估一下最优模型的精度。</p>
-<p>将PaddleClas/configs/ResNet/garbage_ResNet50_vd.yaml文件中验证集的路径改为测试集。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">VALID:</span></span><br><span class="line">    <span class="attr">batch_size:</span> <span class="number">64</span></span><br><span class="line">    <span class="attr">num_workers:</span> <span class="number">0</span></span><br><span class="line">    <span class="attr">file_list:</span> <span class="string">&quot;/home/aistudio/test_list.txt&quot;</span></span><br><span class="line">    <span class="attr">data_dir:</span> <span class="string">&quot;/home/aistudio/&quot;</span></span><br></pre></td></tr></table></figure>
-<p>开始评估模型，</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python tools/eval.py <span class="literal">-c</span> \</span><br><span class="line">./configs/ResNet/garbage_ResNet50_vd.yaml <span class="literal">-o</span> \</span><br><span class="line">pretrained_model=<span class="string">&quot;./output/ResNet50_vd/best_model/ppcls&quot;</span></span><br></pre></td></tr></table></figure>
-<p>运行结果如下：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-15</span> <span class="number">09</span>:<span class="number">08</span>:<span class="number">25</span> INFO: epoch:<span class="number">0</span>  , valid step:<span class="number">0</span>   , loss: <span class="number">1.05716</span>, top1: <span class="number">0.89062</span>, top5: <span class="number">1.00000</span>, lr: <span class="number">0.000000</span>, batch_cost: <span class="number">0.75766</span> s, reader_cost: <span class="number">0.68446</span> s, ips: <span class="number">84.47009</span> images/sec.</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-15</span> <span class="number">09</span>:<span class="number">08</span>:<span class="number">31</span> INFO: epoch:<span class="number">0</span>  , valid step:<span class="number">10</span>  , loss: <span class="number">0.89015</span>, top1: <span class="number">0.92188</span>, top5: <span class="number">1.00000</span>, lr: <span class="number">0.000000</span>, batch_cost: <span class="number">0.58153</span> s, reader_cost: <span class="number">0.51459</span> s, ips: <span class="number">110.05544</span> images/sec.</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-15</span> <span class="number">09</span>:<span class="number">08</span>:<span class="number">36</span> INFO: epoch:<span class="number">0</span>  , valid step:<span class="number">20</span>  , loss: <span class="number">0.91526</span>, top1: <span class="number">0.90625</span>, top5: <span class="number">1.00000</span>, lr: <span class="number">0.000000</span>, batch_cost: <span class="number">0.58075</span> s, reader_cost: <span class="number">0.51361</span> s, ips: <span class="number">110.20320</span> images/sec.</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-15</span> <span class="number">09</span>:<span class="number">08</span>:<span class="number">42</span> INFO: epoch:<span class="number">0</span>  , valid step:<span class="number">30</span>  , loss: <span class="number">0.83382</span>, top1: <span class="number">0.92857</span>, top5: <span class="number">1.00000</span>, lr: <span class="number">0.000000</span>, batch_cost: <span class="number">0.55392</span> s, reader_cost: <span class="number">0.48895</span> s, ips: <span class="number">25.27445</span> images/sec.</span><br><span class="line"><span class="number">2020</span><span class="literal">-12</span><span class="literal">-15</span> <span class="number">09</span>:<span class="number">08</span>:<span class="number">42</span> INFO: <span class="keyword">END</span> epoch:<span class="number">0</span>   valid loss: <span class="number">0.96556</span>, top1: <span class="number">0.90331</span>, top5: <span class="number">0.99018</span>,  batch_cost: <span class="number">0.55392</span> s, reader_cost: <span class="number">0.48895</span> s, batch_cost_sum: <span class="number">11.63230</span> s, ips: <span class="number">25.27445</span> images/sec.</span><br></pre></td></tr></table></figure>
-<p>可以看出当前的最优模型在测试集上的精度为top1: 0.90331, top5: 0.99018。准确率可以达到90%，当然这个精度还是可以继续提升的。可以通过调参、更换模型和数据增强进一步提升模型精度。</p>
-<p>下一篇会解析一下PaddleClas套件中的核心代码，以及一些调优的策略。</p>
-<p>PaddleClas仓库地址：<a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleClas">https://github.com/PaddlePaddle/PaddleClas</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://txyugood.github.io/2021/01/06/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%A6%E4%BD%A0%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB%E5%99%A8/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/01/06/%E4%B8%8D%E6%87%82%E8%A7%86%E9%A2%91%E5%88%86%E7%B1%BB%EF%BC%9FResNet3D%E5%B8%AE%E4%BD%A0%E6%90%9E%E5%AE%9A/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          不懂视频分类？ResNet3D帮你搞定
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/01/06/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E6%A1%A8%E5%A4%8D%E7%8E%B0-CVPR2018-Relation-Net%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于飞桨复现-CVPR2018-Relation-Net小样本学习</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -379,9 +224,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
